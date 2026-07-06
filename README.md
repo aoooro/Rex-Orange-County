@@ -11,14 +11,14 @@ Private deck hosting for OOO x Rex Orange County.
 
 1. Encrypt the new source file (keep originals off this repo — it's public):
    ```sh
-   npx staticrypt "decks/<file>.html" -p "<password>" -d /tmp/enc \
+   npx staticrypt "<source-file>.html" -p "<password>" -d /tmp/enc \
+     -t gate-template.html \
      --template-title "OOO x Rex Orange County" \
-     --template-instructions "Enter the access password" \
-     --template-button "Enter" --remember 14 --short
+     --template-placeholder "Password" --template-button "Enter" \
+     --template-error "Wrong password, try again." --remember 14 --short
    mv /tmp/enc/<file>.html index.html
    ```
-2. Re-add the noindex tag inside `<head>`:
-   `<meta name="robots" content="noindex, nofollow, noarchive">`
+2. `gate-template.html` already includes the noindex meta tag and the OOO-styled layout (wordmark, logo, table row). Edit it to change the gate's look or copy.
 3. Copy the encrypted file into `decks/` as well if it should be reachable at its own URL.
 4. Commit and push — GitHub Actions deploys automatically.
 

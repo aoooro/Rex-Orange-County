@@ -34,91 +34,77 @@
                 min-height: 100%;
                 display: flex;
                 flex-direction: column;
-                box-sizing: border-box;
-                padding: 20px 24px 24px;
-            }
-
-            .ooo-header {
-                display: flex;
-                justify-content: space-between;
                 align-items: center;
-                padding-bottom: 28px;
-            }
-
-            .ooo-wordmark {
-                letter-spacing: 0.01em;
+                justify-content: center;
+                box-sizing: border-box;
+                padding: 24px;
             }
 
             .ooo-logo {
-                height: 14px;
+                width: 150px;
                 display: block;
+                margin-bottom: 36px;
             }
 
-            .ooo-table {
-                flex: 1;
+            .ooo-title {
+                margin: 0 0 36px;
+                font-size: 15px;
+                font-weight: normal;
+                letter-spacing: 0.02em;
+                text-align: center;
             }
 
-            .ooo-row {
-                display: grid;
-                grid-template-columns: 2fr 3fr 3fr 1fr;
-                column-gap: 24px;
-                align-items: baseline;
-                padding: 6px 0;
-            }
-
-            .ooo-row.ooo-cols {
-                padding-bottom: 18px;
-            }
-
-            .ooo-year {
-                text-align: right;
-            }
-
-            .ooo-access {
+            #staticrypt-form {
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 gap: 14px;
+                width: 100%;
+                max-width: 280px;
             }
 
-            .ooo-access input[type="password"],
-            .ooo-access input[type="text"] {
-                background: #f2f2f2;
-                border: 0;
+            #staticrypt-form input[type="password"],
+            #staticrypt-form input[type="text"] {
+                background: transparent;
+                border: 1px solid #000000;
                 border-radius: 0;
                 outline: 0;
                 font-family: inherit;
                 font-size: 15px;
                 color: #000000;
-                padding: 6px 10px;
+                text-align: center;
+                padding: 10px 12px;
                 width: 100%;
-                max-width: 260px;
                 box-sizing: border-box;
             }
 
-            .ooo-access input::placeholder {
-                color: #b3b3b3;
+            #staticrypt-form input::placeholder {
+                color: #999999;
             }
 
             .staticrypt-decrypt-button {
-                background: none;
-                border: 0;
-                padding: 0;
+                background: transparent;
+                border: 1px solid #000000;
+                border-radius: 0;
                 font-family: inherit;
                 font-size: 15px;
                 color: #000000;
+                padding: 10px 12px;
+                width: 100%;
+                box-sizing: border-box;
                 cursor: pointer;
             }
 
             .staticrypt-decrypt-button:hover {
-                text-decoration: underline;
+                background: #000000;
+                color: #ffffff;
             }
 
             label.staticrypt-remember {
                 display: flex;
                 align-items: center;
                 gap: 8px;
-                margin-top: 14px;
-                color: #b3b3b3;
+                color: #999999;
                 font-size: 13px;
                 cursor: pointer;
             }
@@ -129,21 +115,10 @@
             }
 
             .ooo-error {
-                color: #ff3b30;
+                color: #ff5b52;
                 font-size: 13px;
-                margin-top: 14px;
-            }
-
-            .ooo-footer {
-                display: grid;
-                grid-template-columns: 2fr 3fr 3fr 1fr;
-                column-gap: 24px;
-                padding-top: 28px;
-            }
-
-            .ooo-footer a {
-                color: #000000;
-                text-decoration: none;
+                margin-top: 4px;
+                text-align: center;
             }
 
             .hidden {
@@ -173,26 +148,9 @@
                 }
             }
 
-            @media screen and (max-width: 760px) {
-                .ooo-row,
-                .ooo-footer {
-                    grid-template-columns: 1fr;
-                    row-gap: 6px;
-                }
-
-                .ooo-row.ooo-cols,
-                .ooo-year,
-                .ooo-footer span:not(:first-child) {
-                    display: none;
-                }
-
-                .ooo-table {
-                    display: flex;
-                    align-items: center;
-                }
-
-                .ooo-access input[type="password"],
-                .ooo-access input[type="text"] {
+            @media screen and (-webkit-min-device-pixel-ratio: 0) {
+                #staticrypt-form input[type="password"],
+                #staticrypt-form input[type="text"] {
                     font-size: 16px;
                 }
             }
@@ -205,60 +163,31 @@
         </div>
 
         <div id="staticrypt_content" class="staticrypt-content hidden">
-            <header class="ooo-header">
-                <span class="ooo-wordmark">OUT OF OFFICE</span>
-                <svg class="ooo-logo" viewBox="0 0 340 120" xmlns="http://www.w3.org/2000/svg" aria-label="OOO">
-                    <path fill="#000000" d="M95.4 24.6 A50 50 0 1 0 95.4 95.4 Q115 72 134.6 95.4 A50 50 0 1 0 134.6 24.6 Q115 48 95.4 24.6 Z" />
-                    <circle fill="#000000" cx="290" cy="60" r="50" />
-                </svg>
-            </header>
+            <svg class="ooo-logo" viewBox="0 0 340 120" xmlns="http://www.w3.org/2000/svg" aria-label="OOO">
+                <path fill="#000000" d="M95.4 24.6 A50 50 0 1 0 95.4 95.4 Q115 72 134.6 95.4 A50 50 0 1 0 134.6 24.6 Q115 48 95.4 24.6 Z" />
+                <circle fill="#000000" cx="290" cy="60" r="50" />
+            </svg>
 
-            <div class="ooo-table">
-                <div style="width: 100%">
-                    <div class="ooo-row ooo-cols">
-                        <span>Client</span>
-                        <span>Project</span>
-                        <span>Access</span>
-                        <span class="ooo-year">Year</span>
-                    </div>
+            <h1 class="ooo-title">OOO x Rex Orange County</h1>
 
-                    <form id="staticrypt-form" class="ooo-row" action="#" method="post">
-                        <span>OOO x Rex Orange County</span>
-                        <span>Dream Fatigue Marketing Bible</span>
-                        <span class="ooo-access">
-                            <input
-                                id="staticrypt-password"
-                                type="password"
-                                name="password"
-                                placeholder="/*[|template_placeholder|]*/0"
-                                autofocus
-                            />
-                            <input type="submit" class="staticrypt-decrypt-button" value="/*[|template_button|]*/0" />
-                        </span>
-                        <span class="ooo-year">2026</span>
-                    </form>
+            <form id="staticrypt-form" action="#" method="post">
+                <input
+                    id="staticrypt-password"
+                    type="password"
+                    name="password"
+                    placeholder="/*[|template_placeholder|]*/0"
+                    autofocus
+                />
 
-                    <div class="ooo-row">
-                        <span></span>
-                        <span></span>
-                        <span>
-                            <label id="staticrypt-remember-label" class="staticrypt-remember hidden">
-                                <input id="staticrypt-remember" type="checkbox" name="remember" />
-                                /*[|template_remember|]*/0
-                            </label>
-                            <div id="staticrypt-error" class="ooo-error hidden">/*[|template_error|]*/0</div>
-                        </span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
+                <input type="submit" class="staticrypt-decrypt-button" value="/*[|template_button|]*/0" />
 
-            <footer class="ooo-footer">
-                <span>OOO is a 360 creative agency.</span>
-                <span><a href="mailto:staff@ooo.io">staff@ooo.io</a></span>
-                <span></span>
-                <span></span>
-            </footer>
+                <label id="staticrypt-remember-label" class="staticrypt-remember hidden">
+                    <input id="staticrypt-remember" type="checkbox" name="remember" />
+                    /*[|template_remember|]*/0
+                </label>
+
+                <div id="staticrypt-error" class="ooo-error hidden">/*[|template_error|]*/0</div>
+            </form>
         </div>
 
         <script>
